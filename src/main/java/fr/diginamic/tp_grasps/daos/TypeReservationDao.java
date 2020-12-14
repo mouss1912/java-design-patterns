@@ -3,9 +3,10 @@ package fr.diginamic.tp_grasps.daos;
 import java.util.List;
 import java.util.Optional;
 
+import fr.diginamic.tp_grasps.ITypeReservationDao;
 import fr.diginamic.tp_grasps.beans.TypeReservation;
 
-public class TypeReservationDao {
+public class TypeReservationDao implements ITypeReservationDao {
 	
 	private static TypeReservation[] types = {new TypeReservation("TH", 150.0, 15.0), new TypeReservation("CI", 10.9, 0.0)};
 	
@@ -15,6 +16,12 @@ public class TypeReservationDao {
 		if (opt.isPresent()) {
 			return opt.get();
 		}
+		return null;
+	}
+
+	@Override
+	public TypeReservation getType(String type) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }
